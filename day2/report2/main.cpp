@@ -25,18 +25,15 @@ public:
         if(userInterest == 0) interest = 3.0;
         if(userInterest == 1) interest = 4.0;
         if(tax==1) {
-            for(int i=1;i<=year*12;i++) {
-                int tempInterest = (double)money * interest/100 * ((double)i/(double)month);
-                withTax+= money;
+                int tempInterest = (double)money * interest/100 * (12*year + 1) * (12*year) / 24;
+                withTax+= money*(12*year);
                 withTax += tempInterest*(84.6/100);
-            }
+            
             return withTax;
         }else {
-            for(int i=1;i<=year*12;i++) {
-                int tempInterest = (double)money * interest/100 * ((double)i/(double)month);
-                withoutTax+= money;
+                int tempInterest = (double)money * interest/100 * (12*year + 1) * (12*year) / 24;
+                withoutTax+= money*(12*year);
                 withoutTax += tempInterest;
-            }
             return withoutTax;
         }
     }
