@@ -67,7 +67,7 @@ int main() {
     
     cout << "사용자 ID 입력 : ";
     cin >> user1.id;
-    cout << "사용자 이름 입력 : ";
+    cout << "사용자 이름 입력 : "; 
     cin >> *user1.name;
     cout << "적금할 돈 : ";
     cin >> user1.savingMoney;
